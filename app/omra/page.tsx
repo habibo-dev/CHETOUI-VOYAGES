@@ -1,0 +1,2 @@
+import Link from 'next/link';
+export default function Omra(){return <main className="section" style={{paddingTop:140,minHeight:'100vh'}}><div className="container"><span className="eyebrow">OMRA</span><h1>Programmes disponibles sur demande.</h1><p style={{maxWidth:700,color:'#65758e',lineHeight:1.8}}>Cette page est prête à accueillir les programmes réellement confirmés par Chetoui Voyages : départs, hébergements, durées et services inclus.</p><Link className="btn btn-blue" href="/demande">Demander le programme</Link></div></main>}
