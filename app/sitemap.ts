@@ -1,2 +1,3 @@
-import type { MetadataRoute } from 'next';
-export default function sitemap(): MetadataRoute.Sitemap { const base='https://chetoui-voyages.vercel.app'; return ['', '/voyages','/destinations','/omra','/billetterie','/hotels','/offres','/agences','/demande','/a-propos','/contact'].map(path=>({url:base+path,lastModified:new Date()})); }
+import type { MetadataRoute } from 'next'
+import { offers, destinations, branches } from '@/lib/data'
+export default function sitemap():MetadataRoute.Sitemap{const base='https://chetoui-voyages.vercel.app';const fixed=['','voyages','destinations','offres','omra','billetterie','hotels','agences','demande','a-propos','contact','ar'];return [...fixed.map(path=>({url:`${base}/${path}`,lastModified:new Date()})),...offers.map(o=>({url:`${base}/voyages/${o.slug}`,lastModified:new Date()})),...destinations.map(d=>({url:`${base}/destinations/${d.slug}`,lastModified:new Date()})),...branches.map(b=>({url:`${base}/agences/${b.slug}`,lastModified:new Date()}))]}
